@@ -22,4 +22,4 @@ jobs:
           restore-keys: |
             ${{ runner.os }}-pip-
       - name: Run
-        run: python GraduateDayPush.py ${{ secrets.BARK_KEY secrets.BARK_SJ }}
+        run: python GraduateDayPush.py ${{ secrets.BARK_KEY }} ${{ secrets.BARK_SJ }}
