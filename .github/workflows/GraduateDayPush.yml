@@ -1,6 +1,7 @@
 name: 'Graduate Day Push'
 
 on:
+  push:
   schedule:
       - cron: '0 0 * * *'
 
