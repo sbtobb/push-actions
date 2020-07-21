@@ -33,7 +33,9 @@ def barkPush(token,title,content):
     
 def main():
     APP_TOKEN = sys.argv[1]
+    APP_TOKEN2 = sys.argv[2]
     result = barkPush(APP_TOKEN,'考研倒计时',getMsg())
+    result = barkPush(APP_TOKEN2,'考研倒计时',getMsg())
     print(result)
 
 if __name__ == "__main__":
