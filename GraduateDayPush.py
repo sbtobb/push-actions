@@ -1,14 +1,6 @@
 import sys
 from datetime import date
-from wxpusher import WxPusher
 import requests
-
-def getAllSubscriber(appToken):
-    jsonData = WxPusher.query_user('1', '50', appToken)
-    uidList = []
-    for record in jsonData['data']['records']:
-        uidList.append(record['uid'])
-    return uidList
 
 def calcDays():
     if date.today() >  date(date.today().year,12,21):
@@ -22,14 +14,10 @@ def getMsg():
     msg = icon + "今天距离考研还有" + str(days) + "天"
     return msg
 
-def wxpush(token,content):
-    subscriberList = getAllSubscriber(token)
-    result = WxPusher.send_message(content=content,token=token,uids=subscriberList)
-    return result
 
 def barkPush(token,title,content):
     r = requests.get('https://api.day.app/'+token+'/'+title+'/'+content)
-    return r.json
+    return r.text
     
 def main():
     APP_TOKEN = sys.argv[1]
