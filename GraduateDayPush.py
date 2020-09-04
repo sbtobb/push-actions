@@ -3,10 +3,10 @@ from datetime import date
 import requests
 
 def calcDays():
-    if date.today() >  date(date.today().year,12,21):
-        return (date(date.today().year + 1,12,21) - date.today()).days
+    if date.today() >  date(date.today().year,12,26):
+        return (date(date.today().year + 1,12,26) - date.today()).days
     else:
-        return (date(date.today().year,12,21) - date.today()).days
+        return (date(date.today().year,12,26) - date.today()).days
     
 def getMsg():
     days = calcDays()
